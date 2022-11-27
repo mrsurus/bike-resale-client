@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ProductCard = ({data}) => {
-    const {name, img,location,Price, used_year, seller, date,original_price} = data;
+const ProductCard = ({data, setModalInfo}) => {
+    const {name, img,location,price, used_year, seller, date,original_price} = data;
     return (
         <div className=' '>
             <div className="card w-92 h-[600px] bg-base-100 shadow-xl my-5">
@@ -9,7 +9,7 @@ const ProductCard = ({data}) => {
                 <div className="card-body">
                     <h2 className="card-title">
                         {name}
-                        <div className="badge badge-secondary">{Price}$</div>
+                        <div className="badge badge-secondary">{price}$</div>
                         
                     </h2>
                     <p>Location: {location}</p>
@@ -18,7 +18,11 @@ const ProductCard = ({data}) => {
                     <p>Original Price: {original_price} $</p>
                     <div className="card-actions justify-between">
                         <div className="badge badge-outline">{date}</div>
-                        <button className='btn '>Bye Now</button>
+                        <label
+                        htmlFor="booking-modal"
+                        className="btn btn-primary text-white"
+                        onClick={() => setModalInfo(data)}
+                    >Buy now</label>
                         
                     </div>
                 </div>
