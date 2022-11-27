@@ -1,0 +1,63 @@
+[
+    {
+        "brand":"YAMAHA",
+        "name": "YAMAHA FZ V2",
+        "img":"https://www.banglamotor.net/images/yamaha/yamaha-fzs-fi-v2-img3.jpg",
+        "Price": 2500,
+        "location":"Gazipur",
+        "seller": "Ismail Sordar",
+        "used_year": 4,
+        "date": "4-7-22"
+    },
+    {
+        "brand":"YAMAHA",
+        "name": "YAMAHA FZ V3",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2IFvckIda11vzSNitJ_N7Zs0orRFDoOydkQ&usqp=CAU",
+        "Price": 2500,
+        "location":"Naraongonj",
+        "seller": "Porag MOndol",
+        "used_year": 3,
+        "date": "14-9-22"
+    },
+    {
+        "brand":"TVS",
+        "name": "TVS Palser N160",
+        "img":"https://www.motorcyclevalley.com/photo/Bajaj%20pulser%20N160-1663652116.jpg",
+        "Price": 1500,
+        "location":"Savar",
+        "seller": "Surunjit Adikari",
+        "used_year": 4,
+        "date": "24-9-22"
+    },
+    {
+        "brand":"TVS",
+        "name": "TVS RTR 4V",
+        "img":"https://www.motorcyclevalley.com/photo/Bajaj%20pulser%20N160-1663652116.jpg",
+        "Price": 2500,
+        "location":"Naraongonj",
+        "seller": "Porag MOndol",
+        "used_year": 3,
+        "date": "14-9-22"
+    },
+    {
+        "brand":"HONDA",
+        "name": "Honda Splender Plus",
+        "img":"https://www.banglamotor.net/images/hero/hero-splendor-ibs-image1.jpg",
+        "Price": 2500,
+        "location":"Uttora",
+        "seller": "Saimon Parvej",
+        "used_year": 5,
+        "date": "14-9-22"
+    },
+    {
+        "brand":"HONDA",
+        "name": "Hero Honda 80cc",
+        "img":"https://www.bikevaly.com/assets/img/hero-hf-deluxe-img01.webp",
+        "Price": 800,
+        "location":"Mirpur",
+        "seller": "Abdullah",
+        "used_year": 7,
+        "date": "14-9-21"
+    }
+    
+]
