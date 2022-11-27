@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Category = () => {
+const Category = ({ ctg, }) => {
 
-    useEffect(()=>{
-        fetch('Category.json')
-        .then(res => res.json())
-        .then(data => console.log(data))
-    },[])
     return (
-        <div>
-            <h1>This is Category Section</h1>
-
+        <div  >
+            <Link to={`/category/${ctg.brand}`}>
+                <div className="card mx-auto w-84 h-60 bg-base-100 shadow shadow-black py-3 ">
+                    <figure><img src={ctg.img} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <h2 className=" text-center text-3xl font-bold">{ctg.brand}</h2>
+                    </div>
+                </div>
+            </Link>
         </div>
     );
 };
