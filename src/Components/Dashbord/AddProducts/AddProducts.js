@@ -35,13 +35,27 @@ const AddProducts = () => {
             used_year: usedYear,
             date:date
         }
-        console.log(products);
+        
+        fetch(`http://localhost:5000/products`,{
+            method:'POST',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body:JSON.stringify(products)
+
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            form.reset()
+        })
+
     }
 
     return (
         <div>
             <div className='w-2/3 mx-auto'>
-                <p className='text-center text-3xl'>Add A Product</p>
+                <p className='text-center text-3xl my-5'>Add A Product</p>
                 <form onSubmit={handleAddProducts}>
                     <p className='text-xl'>Product Name:</p>
                     <input type="text" className='input input-bordered w-full mb-3 ' placeholder='Name' name="name" id="" required />

@@ -21,13 +21,15 @@ const DashbordLayout = () => {
                 <div className="drawer-content ">
                     <Outlet></Outlet>
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side ">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+                    <ul className="menu p-4 w-80  text-base-content bg-green-500">
                         
-                        { !isSeller && <li><Link to='/dashbord/myorders' >My Orders</Link ></li>}
-                        { isSeller &&  <li><Link to='/dashbord/myproducts'> My Products </Link> </li>}
-                        { isSeller &&  <li><Link to='/dashbord/addproducts'> Add Products</Link> </li>}
+                        { !isSeller && <li className="bg-white rounded my-3 hover:bg-gray-300" ><Link to='/dashbord/myorders ' >My Orders</Link ></li>}
+                        { isSeller &&  <li className="bg-white rounded my-3 hover:bg-gray-300"><Link to='/dashbord/myproducts'> My Products </Link> </li>}
+                        { isSeller &&  <li className="bg-white rounded my-3 hover:bg-gray-300"><Link to='/dashbord/addproducts'> Add Products</Link> </li>}
+                        { isSeller &&  <li className="bg-white rounded my-3 hover:bg-gray-300"><Link to='/dashbord/allbuyer'> All Buyer</Link> </li>}
+                        { isSeller &&  <li className="bg-white rounded my-3 hover:bg-gray-300"><Link to='/dashbord/allseller'> All Seller</Link> </li>}
                          
                     </ul>
 
