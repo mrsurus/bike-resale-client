@@ -12,7 +12,6 @@ const Navbar = () => {
 
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/appointment">My Orders</Link></li>
         <li><Link to="/about">About</Link></li>
         {user ?
             <>
@@ -45,10 +44,13 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                <div className='navbar-end'>
+                    <label htmlFor="my-drawer-2" tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <p><small className='text-blue-900'>Dashbord</small></p>
+                    </label>
                 </div>
             </div>
+
         </div>
     );
 };

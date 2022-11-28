@@ -1,9 +1,10 @@
 import React, { createContext, useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const SignUp = () => {
     const { createUser, updateUser, googleLogIn } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const [checkvalue, setCheckvalue] = useState(false)
     const handleSignup = (e) => {
@@ -22,7 +23,25 @@ const SignUp = () => {
                     displayName: name
                 }
                 updateUser(userInfo)
-                    .then()
+                    .then(res => {
+                        const user = {
+                            name:name,
+                            email:email,
+                            isSeller: isSeller
+                        }
+                        fetch('http://localhost:5000/users',{
+                            method:'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(user)
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            navigate('/')
+                        })
+                    })
                     .catch(err => console.log(err))
             })
             .catch(err => console.log(err))

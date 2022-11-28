@@ -17,6 +17,7 @@ const Products = () => {
 
              
                 {modalInfo && <OrderModal
+                setModalInfo={setModalInfo}
                 modalInfo={modalInfo}>
                     </OrderModal>}
              
