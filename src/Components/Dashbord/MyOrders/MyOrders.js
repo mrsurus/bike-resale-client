@@ -7,8 +7,8 @@ import MyOrderCard from './MyOrderCard';
 const MyOrders = () => {
     const { user } = useContext(AuthContext)
 
-    const { data: orders = [] } = useQuery({
-        queryKey: ['orders', user?.email],
+    const { data: orders = [],refetch } = useQuery({
+        queryKey: ['orders', user?.email,],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/orders?email=${user?.email}`)
             const data = await res.json()
@@ -16,8 +16,16 @@ const MyOrders = () => {
         }
     })
 
-    const handleDeleteOrder =()=>{
-        
+    const handleDeleteOrder =(id)=>{
+        fetch(`http://localhost:5000/orders/${id}`,{
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.acknowledged){
+                refetch()
+            }
+        })
     }
 
     return (
@@ -38,7 +46,7 @@ const MyOrders = () => {
                         orders?.map(order => <tbody>
                             <tr>
                                 <th>
-                                    <button onClick={handleDeleteOrder} className='btn btn-error text-white'>X</button>
+                                    <button onClick={()=>handleDeleteOrder(order._id)} className='btn btn-error text-white'>X</button>
                                 </th>
                                 <td>
                                     <div className="flex items-center space-x-3">
