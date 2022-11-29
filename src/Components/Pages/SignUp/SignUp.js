@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
@@ -39,6 +40,7 @@ const SignUp = () => {
                         .then(res => res.json())
                         .then(data => {
                             console.log(data)
+                            toast.success('Sign Up Successful')
                             navigate('/')
                         })
                     })
@@ -49,7 +51,9 @@ const SignUp = () => {
 
     const handleGoogleLogIn = () => {
         googleLogIn()
-            .then(res => console.log(res.user))
+            .then(res => {
+                toast.success('Sign up successful')
+                console.log(res.user)})
             .catch(err => console.log(err))
     }
     return (

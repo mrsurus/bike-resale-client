@@ -1,24 +1,23 @@
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
-import useSeller from "../../../hooks/useSeller";
+import useBuyer from "../../../hooks/useBuyer";
 import Spinner from "../../Shared/Spinner/Spinner";
 
-
-const SellerRoute = ({ children }) => {
+const BuyerRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
-    const [isSeller, isSellerLoading] = useSeller(user?.email)
+    const [isBuyer, isBuyerLoading] = useBuyer(user?.email)
     const location = useLocation();
 
-    if (loading || isSellerLoading) {
+    if (loading || isBuyerLoading) {
         return <Spinner></Spinner>
     }
 
-    if (user && isSeller) {
+    if (user && isBuyer) {
         return children;
     }
 
     return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
 };
 
-export default SellerRoute;
+export default BuyerRoute;

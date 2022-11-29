@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const OrderModal = ({modalInfo,setModalInfo}) => {
@@ -35,6 +36,7 @@ const OrderModal = ({modalInfo,setModalInfo}) => {
         .then(data => {
             if(data.acknowledged){
                 setModalInfo(null)
+                toast.success('Order Placed SuccessfullY')
             }
         })
     }

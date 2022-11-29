@@ -20,7 +20,7 @@ const MyProducts = () => {
                
                 {
                     myproducts.map(myproduct =>
-                        <div className="card card-side bg-base-100 shadow-2xl my-5">
+                        <div key={myproduct._id} className="card card-side bg-base-100 shadow-2xl my-5">
                             <div className='w-1/2'>
                                 <figure><img src={myproduct.img} alt="Movie" /></figure>
                             </div>
