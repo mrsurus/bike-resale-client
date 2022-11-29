@@ -37,6 +37,7 @@ const Navbar = () => {
                             {menuItems}
                         </ul>
                     </div>
+                    <div className='w-10 ml-10'><img className='w-full' src="https://w7.pngwing.com/pngs/398/945/png-transparent-suzuki-motorcycle-favicon-a-motorcycle-motorcycle-cartoon-motorcycle-vector-motorcycle-helmet.png" alt="" /></div>
                     <Link className="btn btn-ghost normal-case text-3xl font-bold ">RR. Bike</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
