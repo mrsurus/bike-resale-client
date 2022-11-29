@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Login = () => {
@@ -18,8 +19,14 @@ const Login = () => {
         Login(email,password)
         .then(res =>{
             console.log(res.user);
-            toast.success('Log in successful')
+            Swal.fire(
+                'Good job!',
+                'Log In Successful!',
+                'success'
+              )
             navigate(from, {replace: true})
+           
+              
         })
         .catch(err => console.log(err))
 
@@ -29,7 +36,11 @@ const Login = () => {
         googleLogIn()
         .then(res => {
             console.log(res.user)
-            toast.success('Log in successful')
+            Swal.fire(
+                'Good job!',
+                'Log In Successful!',
+                'success'
+              )
         })
         .catch(err => console.log(err))
     }

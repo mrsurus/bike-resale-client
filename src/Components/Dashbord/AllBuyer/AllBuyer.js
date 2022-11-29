@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 const AllBuyer = () => {
     const {data:buyers=[],refetch} =useQuery({
@@ -20,7 +21,12 @@ const AllBuyer = () => {
         .then(data => {
             console.log(data);
             refetch()
-            toast.success('buyer deleted successfully')
+            Swal.fire({
+              icon: 'error',
+              title: 'Deleted',
+              text: 'Buyer deleted Successfully!',
+              
+            })
         })
     }
 

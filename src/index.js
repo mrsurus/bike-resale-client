@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './contexts/AuthProvider';
 import { QueryClient, QueryClientProvider, } from '@tanstack/react-query'
+import Swal from 'sweetalert2'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient()

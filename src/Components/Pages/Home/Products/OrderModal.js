@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const OrderModal = ({modalInfo,setModalInfo}) => {
@@ -36,7 +37,11 @@ const OrderModal = ({modalInfo,setModalInfo}) => {
         .then(data => {
             if(data.acknowledged){
                 setModalInfo(null)
-                toast.success('Order Placed SuccessfullY')
+                Swal.fire(
+                    'Good job!',
+                    'Order Placed Successfully!',
+                    'success'
+                  )
             }
         })
     }

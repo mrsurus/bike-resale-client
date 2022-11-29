@@ -1,11 +1,15 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import useSeller from '../../../hooks/useSeller';
 
 const AddProducts = () => {
     const {user} = useContext(AuthContext)
+    const [isVerified]= useSeller(user?.email)
     const navigate= useNavigate()
+    console.log(isVerified);
 
     const handleAddProducts = (e) => {
         e.preventDefault()
@@ -23,6 +27,12 @@ const AddProducts = () => {
         const month = new Date().getMonth()
         const year = new Date().getFullYear()
         const date = `${todayDate}/${month}/${year}`
+        let sellerStatus = ''
+        if(isVerified){
+            sellerStatus = 'verified'
+        }
+
+        console.log('seller status ', sellerStatus);
 
         const products = {
             name: productName,
@@ -36,7 +46,8 @@ const AddProducts = () => {
             price:price,
             original_price:orginalPrice,
             used_year: usedYear,
-            date:date
+            date:date,
+            sellerStatus: sellerStatus
         }
         
         fetch(`http://localhost:5000/products`,{
@@ -53,7 +64,11 @@ const AddProducts = () => {
             if(data.acknowledged){
                 form.reset()
                 navigate('/dashbord/myproducts')
-                toast.success('product added successfully')
+                Swal.fire(
+                    'Good job!',
+                    'Product Added Successfully!',
+                    'success'
+                  )
             }
             
         })

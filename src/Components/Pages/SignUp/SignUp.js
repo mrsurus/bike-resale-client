@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const SignUp = () => {
@@ -40,8 +41,12 @@ const SignUp = () => {
                         .then(res => res.json())
                         .then(data => {
                             console.log(data)
-                            toast.success('Sign Up Successful')
                             navigate('/')
+                            Swal.fire(
+                                'Good job!',
+                                'successfully signed up!',
+                                'success'
+                              )
                         })
                     })
                     .catch(err => console.log(err))
@@ -52,7 +57,11 @@ const SignUp = () => {
     const handleGoogleLogIn = () => {
         googleLogIn()
             .then(res => {
-                toast.success('Sign up successful')
+                Swal.fire(
+                    'Good job!',
+                    'Sign Up Successful!',
+                    'success'
+                  )
                 console.log(res.user)})
             .catch(err => console.log(err))
     }
