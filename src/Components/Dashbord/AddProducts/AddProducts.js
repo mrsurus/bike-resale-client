@@ -68,7 +68,7 @@ const AddProducts = () => {
                     <p className='text-xl'>Product Name:</p>
                     <input type="text" className='input input-bordered w-full mb-3 ' placeholder='Name' name="name" id="" required />
                     <p className='text-xl'>Select a Brand</p>
-                    <select name="brand" className="select select-bordered w-full">
+                    <select name="brand" className="select select-bordered w-full" required>
                         <option>YAMAHA</option>
                         <option>TVS</option>
                         <option>HONDA</option>
@@ -82,7 +82,7 @@ const AddProducts = () => {
                     <p className='text-xl'>Original Price:</p>
                     <input type="text" className='input input-bordered w-full mb-3 ' placeholder='Original Price' name="originalPrice" id="" required />
                     <p className='text-xl'>Select Condition</p>
-                    <select name="condition" className="select select-bordered w-full">
+                    <select name="condition" className="select select-bordered w-full" required>
                         <option>Excellent</option>
                         <option>Good</option>
                         <option>Fair</option>

@@ -67,19 +67,19 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input name='name' type="text" placeholder="name" className="input input-bordered" />
+                                <input name='name' type="text" placeholder="name" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input name='email' type="email" placeholder="email" className="input input-bordered" />
+                                <input name='email' type="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input name='password' type="text" placeholder="password" className="input input-bordered" />
+                                <input name='password' type="text" placeholder="password" className="input input-bordered"  required/>
                                 <label className="label">
                                     <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>

@@ -8,6 +8,7 @@ import MyProducts from "../../Dashbord/MyProducts/MyProducts";
 import Blog from "../../Pages/Blog/Blog";
 import Products from "../../Pages/Home/Products/Products";
 import Login from "../../Pages/Login/Login";
+import NotFound from "../../Pages/NotFound/NotFound";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import BuyerRoute from "../BuyerRoute/BuyerRoute";
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         path: '/',
         element:<Main></Main>,
         children: [
+            {
+                path: '*',
+                element:<NotFound></NotFound>
+            },
             {
                 path: '/',
                 element:<Home></Home>

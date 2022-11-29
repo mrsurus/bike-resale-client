@@ -28,9 +28,10 @@ const MyProducts = () => {
                                 <h2 className="card-title">{myproduct.name}</h2>
                                 <p>Brand: {myproduct.brand}</p>
                                 <p>Price: {myproduct.price}$</p>
-                                <p>Original Price: {myproduct.brand}</p>
-                                <p>Brand:{myproduct.brand}</p>
+                                <p>Original Price: {myproduct.original_price}$</p>
+                                <p>Used: {myproduct.used_year} year</p>
                                 <button className='btn btn-success text-end'>Avilable</button>
+                                <button className='btn btn-success text-end'>Add</button>
                             </div>
                         </div>)
                 }
