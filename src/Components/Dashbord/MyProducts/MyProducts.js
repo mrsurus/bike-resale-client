@@ -30,7 +30,7 @@ const MyProducts = () => {
                                 <p>Price: {myproduct.price}$</p>
                                 <p>Original Price: {myproduct.brand}</p>
                                 <p>Brand:{myproduct.brand}</p>
-
+                                <button className='btn btn-success text-end'>Avilable</button>
                             </div>
                         </div>)
                 }

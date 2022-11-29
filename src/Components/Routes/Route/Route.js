@@ -5,6 +5,7 @@ import AllSeller from "../../Dashbord/AllSeller/AllSeller";
 import Dashbord from "../../Dashbord/Dashbord/Dashbord";
 import MyOrders from "../../Dashbord/MyOrders/MyOrders";
 import MyProducts from "../../Dashbord/MyProducts/MyProducts";
+import Blog from "../../Pages/Blog/Blog";
 import Products from "../../Pages/Home/Products/Products";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element:<SignUp></SignUp>
+            },
+            {
+                path: '/blog',
+                element:<Blog></Blog>
             },
             {
                 path: '/category/:brand',
