@@ -1,9 +1,6 @@
-import { isDisabled } from '@testing-library/user-event/dist/utils';
-import styled from 'daisyui/dist/styled';
-import React, { useContext } from 'react';
+
+import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
-import { AuthContext } from '../../../../contexts/AuthProvider';
-import useBuyer from '../../../../hooks/useBuyer';
 
 const ProductCard = ({ data, setModalInfo }) => {
     const { name, img, location, price, used_year, seller, date, original_price, sellerStatus } = data;

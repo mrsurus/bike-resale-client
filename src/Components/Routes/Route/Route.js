@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/category/:brand',
-                loader: ({params}) => fetch(`http://localhost:5000/products/${params.brand}`),
+                loader: ({params}) => fetch(`https://bike-resale-server-three.vercel.app/products/${params.brand}`),
                 element:<PrivateRoute><Products></Products></PrivateRoute>
             },
         ]

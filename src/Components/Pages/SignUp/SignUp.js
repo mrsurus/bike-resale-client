@@ -31,7 +31,7 @@ const SignUp = () => {
                             email:email,
                             isSeller: isSeller
                         }
-                        fetch('http://localhost:5000/users',{
+                        fetch('https://bike-resale-server-three.vercel.app/users',{
                             method:'POST',
                             headers: {
                                 'content-type': 'application/json'

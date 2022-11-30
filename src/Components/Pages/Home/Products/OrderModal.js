@@ -26,7 +26,7 @@ const OrderModal = ({modalInfo,setModalInfo}) => {
             img:img
         }
         
-        fetch('http://localhost:5000/orders',{
+        fetch('https://bike-resale-server-three.vercel.app/orders',{
             method: 'POST',
             headers: {
                 'content-type':'application/json'

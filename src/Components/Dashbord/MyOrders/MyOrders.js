@@ -10,14 +10,14 @@ const MyOrders = () => {
     const { data: orders = [],refetch } = useQuery({
         queryKey: ['orders', user?.email,],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/orders?email=${user?.email}`)
+            const res = await fetch(`https://bike-resale-server-three.vercel.app/orders?email=${user?.email}`)
             const data = await res.json()
             return data
         }
     })
 
     const handleDeleteOrder =(id)=>{
-        fetch(`http://localhost:5000/orders/${id}`,{
+        fetch(`https://bike-resale-server-three.vercel.app/orders/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())
@@ -30,7 +30,7 @@ const MyOrders = () => {
 
     return (
         <div className='mx-10'>
-            <h3 className='text-center text-2xl my-5'>My Orders</h3>
+            <h3 className='text-center text-2xl my-5'>You have {orders.length} Orders</h3>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>

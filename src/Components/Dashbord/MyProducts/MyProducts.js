@@ -8,7 +8,7 @@ const MyProducts = () => {
     const { data: myproducts = [] } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/products?email=${user?.email}`)
+            const res = await fetch(`https://bike-resale-server-three.vercel.app/products?email=${user?.email}`)
             const data = await res.json()
             return data
         }
@@ -30,8 +30,8 @@ const MyProducts = () => {
                                 <p>Price: {myproduct.price}$</p>
                                 <p>Original Price: {myproduct.original_price}$</p>
                                 <p>Used: {myproduct.used_year} year</p>
-                                <button className='btn btn-success text-end'>Avilable</button>
-                                <button className='btn btn-success text-end'>Add</button>
+                                <button className='btn btn-success '>Avilable</button>
+                                <button className='btn  '>Ad</button>
                             </div>
                         </div>)
                 }

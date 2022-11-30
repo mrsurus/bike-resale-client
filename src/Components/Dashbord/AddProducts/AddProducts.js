@@ -50,7 +50,7 @@ const AddProducts = () => {
             sellerStatus: sellerStatus
         }
         
-        fetch(`http://localhost:5000/products`,{
+        fetch(`https://bike-resale-server-three.vercel.app/products`,{
             method:'POST',
             headers:{
                 'content-type': 'application/json'
@@ -106,7 +106,7 @@ const AddProducts = () => {
                     <input type="text" className='input input-bordered w-full mb-3 ' placeholder='Used of year' name="usedYear" id="" required />
                     <p className='text-xl'>Image URL</p>
                     <input type="text" className='input input-bordered w-full mb-3 ' placeholder='Image URL' name="img" id="" required />
-                    <input type="submit" name="" className='btn btn-primary my-10' value='Add To Services' id="" />
+                    <input type="submit" name="" className='btn btn-primary my-10' value='Add Product' id="" />
                 </form>
             </div>
         </div>
