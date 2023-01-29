@@ -3,7 +3,7 @@ import React from 'react';
 const Banner = () => {
     return (
         <div>
-            <div className="hero h-[600px]  my-6 " style={{ backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS7H72bswsu6-4eE5MuXp_wwZk25gJmTOo2A&usqp=CAU")` }}>
+            <div className="hero h-[600px]  my-6 mb-16  " style={{ backgroundImage: `url("https://e0.pxfuel.com/wallpapers/683/85/desktop-wallpaper-video-kawasaki-ninja-1272%C3%97712-kawasaki-ninja-ninja-bike-ninja-black-kawasaki.jpg")` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Category = ({ ctg, }) => {
 
     return (
-        <div  >
+        <div className='mb-16 mt-8' >
             <Link to={`/category/${ctg.brand}`}>
                 <div className="card mx-auto w-84 h-60 bg-base-100 shadow shadow-black py-3 ">
                     <figure><img src={ctg.img} alt="Shoes" /></figure>
